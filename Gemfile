@@ -30,6 +30,8 @@ gem 'json'
 gem 'sass'
 gem 'jquery-rails'
 
+gem 'omniauth'
+
 gem 'wicked_pdf'
 
 gem 'capistrano'
