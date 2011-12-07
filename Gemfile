@@ -2,32 +2,34 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'addressable'
+gem 'uuidtools', '2.1.2'
 
-gem 'sqlite3'
+gem 'mongrel', '1.2.0.pre2'
+group :development, :test do
+  gem "rspec-rails"
+  gem "shoulda"
+  gem "jasmine"
 
-gem 'rspec'
+  gem 'rb-fsevent'
+  gem 'spork', '~> 0.9.0.rc5'
+  gem 'guard', :git => 'git://github.com/guard/guard.git'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-coffeescript'
+  gem 'guard-compass', :git => 'git://github.com/guard/guard-compass.git'
+  gem 'guard-pow'
+  gem "guard-livereload", "~> 0.2.0"
+end
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'mysql'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'haml'
+gem 'haml-rails'
+gem 'json'
+gem 'sass'
+gem 'jquery-rails'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'wicked_pdf'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem 'capistrano'
