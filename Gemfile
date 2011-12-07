@@ -30,7 +30,7 @@ gem 'json'
 gem 'sass'
 gem 'jquery-rails'
 
-gem 'omniauth'
+gem 'devise'
 
 gem 'wicked_pdf'
 
