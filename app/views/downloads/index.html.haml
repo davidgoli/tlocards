@@ -1,0 +1,7 @@
+%h1 Existing downloads
+- if @downloads.empty?
+  No downloads
+
+%ul
+- @downloads.each do |download|
+  %li= download
