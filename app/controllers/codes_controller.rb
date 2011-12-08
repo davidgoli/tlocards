@@ -25,6 +25,7 @@ class CodesController < ApplicationController
   end
 
   def redeem
+    @date = DateTime.now
     @code = DownloadCode.new
   end
 
@@ -42,6 +43,7 @@ class CodesController < ApplicationController
     if code.update_attributes(params[:download_code])
       redirect_to download_path
     else
+      @code = code
       render redeem
     end
   end

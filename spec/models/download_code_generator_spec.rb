@@ -3,12 +3,11 @@ require 'spec_helper'
 describe DownloadCodeGenerator do
   let(:download) {
     returning(mock('download')) do |download|
-      codes = []
-      download.stub_chain(:download_codes, :length){codes.length}
+      @codes = []
+      download.stub_chain(:download_codes, :length){@codes.length}
       download.stub_chain(:download_codes, :build) {|hash|
-        codes << {:hash => hash}
+        @codes << {:hash => hash}
       }
-      download.stub(:download_codes){codes}
     end
   }
 
@@ -20,7 +19,7 @@ describe DownloadCodeGenerator do
     end
 
     it 'should generate the correct number of codes' do
-      download.download_codes.length.should == 5
+      @codes.length.should == 5
     end
   end
 end
