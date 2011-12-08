@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208004723) do
+ActiveRecord::Schema.define(:version => 20111208015107) do
+
+  create_table "download_codes", :force => true do |t|
+    t.integer  "download_id"
+    t.string   "code"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "downloads", :force => true do |t|
     t.string   "title"
