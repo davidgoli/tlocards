@@ -33,6 +33,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'formtastic'
 
+gem 'paperclip'
+
 gem 'wicked_pdf'
 
 gem 'capistrano'
