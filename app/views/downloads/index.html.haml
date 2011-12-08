@@ -4,7 +4,16 @@
 
 %p= link_to 'Create a new download', new_download_path
 
-%ul
-- @downloads.each do |download|
-  %li= download
+%table
+  %thead
+    %tr
+      %td Artist
+      %td Title
+      %td Release date
+  %tbody
+  - @downloads.each do |download|
+    %tr
+      %td= download.artist
+      %td= download.title
+      %td= download.release_date
 

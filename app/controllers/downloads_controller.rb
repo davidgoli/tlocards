@@ -6,4 +6,13 @@ class DownloadsController < ApplicationController
   def new
     @download = Download.new
   end
+
+  def create
+    @download = Download.new(params[:download])
+    if @download.save
+      redirect_to(downloads_path, :notice => "Download '#{@download.title}' created")
+    else
+      render :action => new
+    end
+  end
 end
