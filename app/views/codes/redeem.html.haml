@@ -1,0 +1,6 @@
+= semantic_form_for @code, :url => do_redeem_download_code_path do |f|
+  = f.inputs do
+    = f.input :code, :label => 'Enter code:'
+    = f.input :email, :label => 'Your email:'
+  = f.buttons do
+    = f.commit_button :label => 'Redeem code'
