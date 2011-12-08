@@ -1,7 +1,10 @@
 %h1 Existing downloads
 - if @downloads.empty?
-  No downloads
+  No downloads to show
+
+%p= link_to 'Create a new download', new_download_path
 
 %ul
 - @downloads.each do |download|
   %li= download
+

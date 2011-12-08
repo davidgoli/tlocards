@@ -31,6 +31,7 @@ gem 'sass'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'formtastic'
 
 gem 'wicked_pdf'
 
