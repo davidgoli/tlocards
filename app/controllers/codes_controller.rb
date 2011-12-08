@@ -14,6 +14,15 @@ class CodesController < ApplicationController
     end
   end
 
+  def index
+    @codes = @download.download_codes
+    respond_to do |wants|
+      wants.pdf do
+        render :pdf => 'index'
+      end
+    end
+  end
+
   private
   def assign_download
     @download = Download.find(params[:download_id])

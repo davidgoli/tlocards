@@ -5,3 +5,5 @@
         %label.label{:for => 'count'} Number of codes to generate
         %input{:type => 'text', :id => 'count', :name => 'count'}
   %input{:type => 'Submit', :value => 'Generate codes'}
+
+= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
