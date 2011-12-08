@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208002430) do
+ActiveRecord::Schema.define(:version => 20111208004723) do
 
   create_table "downloads", :force => true do |t|
     t.string   "title"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20111208002430) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "artist"
+    t.string   "download_file_name"
+    t.string   "download_content_type"
+    t.integer  "download_file_size"
+    t.datetime "download_updated_at"
   end
 
   create_table "users", :force => true do |t|
