@@ -2,10 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.8'
 
-gem 'addressable'
-gem 'uuidtools', '2.1.2'
-gem 'base32-crockford'
-
 gem 'mongrel', '1.2.0.pre2'
 group :development, :test do
   gem "rspec-rails"

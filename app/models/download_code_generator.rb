@@ -1,3 +1,5 @@
+require 'base32/crockford'
+
 class DownloadCodeGenerator
   def initialize(download)
     @download = download
@@ -10,6 +12,6 @@ class DownloadCodeGenerator
   end
 
   def random_code
-    'abc'
+    rand(36**8).to_s(36)
   end
 end

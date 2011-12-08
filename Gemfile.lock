@@ -189,7 +189,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
-    uuidtools (2.1.2)
     warden (1.1.0)
       rack (>= 1.0)
     wicked_pdf (0.7.2)
@@ -198,7 +197,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  addressable
   capistrano
   devise
   formtastic
@@ -223,5 +221,4 @@ DEPENDENCIES
   sass
   shoulda
   spork (~> 0.9.0.rc5)
-  uuidtools (= 2.1.2)
   wicked_pdf

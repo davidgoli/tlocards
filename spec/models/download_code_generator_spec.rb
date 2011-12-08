@@ -8,6 +8,7 @@ describe DownloadCodeGenerator do
       download.stub_chain(:download_codes, :build) {|hash|
         codes << {:hash => hash}
       }
+      download.stub(:download_codes){codes}
     end
   }
 
@@ -15,10 +16,10 @@ describe DownloadCodeGenerator do
 
   describe '#generate' do
     before do
+      generator.generate(5)
     end
 
     it 'should generate the correct number of codes' do
-      generator.generate(5)
       download.download_codes.length.should == 5
     end
   end
