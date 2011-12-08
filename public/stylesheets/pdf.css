@@ -1,0 +1,87 @@
+.page {
+  border: 1px solid #d6d6d6;
+  font-family: Arial;
+  overflow: auto;
+  padding: 3%;
+  position: relative; }
+  .page .title {
+    margin: 20px 20% 30px 20%;
+    text-align: center;
+    width: 60%; }
+    .page .title h1 {
+      font-family: Georgia;
+      font-size: 85;
+      font-weight: normal;
+      margin-bottom: 6px; }
+    .page .title .subtitle {
+      font-size: 12px;
+      margin-top: 9px; }
+  .page div.horizontal_line {
+    border-top: 1px solid black;
+    display: block;
+    height: 3px;
+    margin: 0;
+    padding: 0; }
+
+.footer {
+  clear: both;
+  padding: 35px 0px 20px 0px;
+  position: relative; }
+  .footer .page_num {
+    float: left;
+    font-size: 12px; }
+  .footer .event_date {
+    float: right;
+    font-size: 12px; }
+
+.pagebreak {
+  page-break-after: always; }
+
+.index {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  right: 30px;
+  top: 30px; }
+
+.column {
+  float: left;
+  width: 47%; }
+  .column.left {
+    margin-right: 3%; }
+  .column.right {
+    margin-left: 3%; }
+  .column .printable-checkbox {
+    background: #d6d6d6;
+    border: 2px solid #b1b1b1;
+    height: 12px;
+    width: 12px; }
+
+.clearfix {
+  display: inline-block; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.code {
+  list-style: none;
+  page-break-inside: avoid;
+  float: left;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
+  width: 280px;
+  text-align: center; }
+  .code p, .code h3, .code h4 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 1; }
+  .code p {
+    line-height: 0.5; }

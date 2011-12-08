@@ -1,3 +1,13 @@
-%ul
-  - @codes.each do |code|
-    %li= code.code
+- paginate_codes @codes do |page|
+  %ul.clearfix
+    - page.each do |code|
+      %li.code
+        %h4= code.download.artist
+        %h3= code.download.title
+        %p Visit
+        %p
+          %strong translinguisticother.com/redeem
+        %p and enter:
+        %p= code.code
+
+  %div.pagebreak

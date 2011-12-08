@@ -1,0 +1,90 @@
+@import "colors"
+
+$serif_font_family: Georgia
+$sans_serif_font_family: Arial
+
+.page
+  border: 1px solid $pdf_background_gray
+  font-family: $sans_serif_font_family
+  overflow: auto
+  padding: 3%
+  .title
+    margin: 20px 20% 30px 20%
+    text-align: center
+    width: 60%
+    h1
+      font-family: $serif_font_family
+      font-size: 85
+      font-weight: normal
+      margin-bottom: 6px
+    .subtitle
+      font-size: 12px
+      margin-top: 9px
+  position: relative
+  div.horizontal_line
+    border-top: 1px solid black
+    display: block
+    height: 3px
+    margin: 0
+    padding: 0
+.footer
+  clear: both
+  padding: 35px 0px 20px 0px
+  position: relative
+  .page_num
+    float: left
+    font-size: 12px
+  .event_date
+    float: right
+    font-size: 12px
+.pagebreak
+  page-break-after: always
+.index
+  font-size: 13px
+  font-weight: bold
+  text-transform: uppercase
+  position: absolute
+  right: 30px
+  top: 30px
+.column
+  float: left
+  width: 47%
+  &.left
+    margin-right: 3%
+  &.right
+    margin-left: 3%
+  .printable-checkbox
+    background: $pdf_background_gray
+    border: 2px solid $pdf_dark_gray
+    height: 12px
+    width: 12px
+
+.clearfix
+  display: inline-block
+
+.clearfix:after
+  content: "."
+  display: block
+  clear: both
+  visibility: hidden
+  line-height: 0
+  height: 0
+
+.code
+  list-style: none
+  page-break-inside: avoid
+  float: left
+  border: 1px solid black
+  margin: 10px
+  padding: 10px
+  padding-bottom: 20px
+  width: 280px
+  text-align: center
+
+  p, h3, h4
+    padding-bottom: 0
+    margin-bottom: 0
+    line-height: 1
+
+  p
+    line-height: 0.5

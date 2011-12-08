@@ -19,7 +19,12 @@ class CodesController < ApplicationController
     @codes = @download.download_codes
     respond_to do |wants|
       wants.pdf do
-        render :pdf => 'index'
+        render :pdf => 'index',
+            :layout => 'layouts/application.pdf.haml',
+            :margin => { :top => 0, # default 10 (mm)
+                         :bottom => 0,
+                         :left   => 0,
+                         :right  => 0 }
       end
     end
   end
