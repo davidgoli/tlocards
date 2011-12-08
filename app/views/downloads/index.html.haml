@@ -19,6 +19,6 @@
       %td= download.title
       %td= download.release_date
       %td
-        - if download.download.file?
+        - if download.zipfile.file?
           x
       %td= link_to 'Edit', edit_download_path(download)

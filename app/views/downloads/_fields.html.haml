@@ -1,8 +1,8 @@
-= semantic_form_for @download do |f|
+= semantic_form_for @download, :html => {:multipart => true} do |f|
   = f.inputs :artist, :title, :release_date
-  - if @download.download.file?
+  - if @download.zipfile.file?
     %li
       Existing file:
-      = @download.download.file
-  = f.inputs :download
+      = @download.zipfile.path
+  = f.inputs :zipfile
   = f.buttons

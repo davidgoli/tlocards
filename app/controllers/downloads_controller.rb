@@ -23,6 +23,13 @@ class DownloadsController < ApplicationController
   def update
     @download = Download.find(params[:id])
     if @download.update_attributes(params[:download])
+      @download.zipfile = params[:download][:zipfile]
+
+      p params[:download][:zipfile]
+      if !@download.save
+        render :action => :edit and return
+      end
+
       redirect_to(downloads_path, :notice => "Download '#{@download.title}' saved")
     else
       render :action => :edit

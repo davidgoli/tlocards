@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(:version => 20111208004723) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "artist"
-    t.string   "download_file_name"
-    t.string   "download_content_type"
-    t.integer  "download_file_size"
-    t.datetime "download_updated_at"
+    t.string   "zipfile_file_name"
+    t.string   "zipfile_content_type"
+    t.integer  "zipfile_file_size"
+    t.datetime "zipfile_updated_at"
   end
 
   create_table "users", :force => true do |t|
