@@ -1,5 +1,3 @@
-require 'base32/crockford'
-
 class DownloadCodeGenerator
   def initialize(download)
     @download = download

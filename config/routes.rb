@@ -1,7 +1,9 @@
 Tlocards::Application.routes.draw do
   devise_for :users
 
-  resources :downloads
+  resources :downloads do
+    resources :codes
+  end
 
   root :to => 'welcome#index'
   # The priority is based upon order of creation:

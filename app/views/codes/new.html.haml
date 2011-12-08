@@ -1,0 +1,7 @@
+%form.formtastic{:action => download_codes_path(@download), :method => 'post'}
+  %fieldset.inputs
+    %ol
+      %li.string.input
+        %label.label{:for => 'count'} Number of codes to generate
+        %input{:type => 'text', :id => 'count', :name => 'count'}
+  %input{:type => 'Submit', :value => 'Generate codes'}
