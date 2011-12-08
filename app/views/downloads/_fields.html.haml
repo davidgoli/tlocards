@@ -1,3 +1,8 @@
 = semantic_form_for @download do |f|
-  = f.inputs :artist, :title, :release_date, :download
+  = f.inputs :artist, :title, :release_date
+  - if @download.download.file?
+    %li
+      Existing file:
+      = @download.download.file
+  = f.inputs :download
   = f.buttons

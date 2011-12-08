@@ -10,6 +10,7 @@
       %td Artist
       %td Title
       %td Release date
+      %td Attachment
       %td
   %tbody
   - @downloads.each do |download|
@@ -17,4 +18,7 @@
       %td= download.artist
       %td= download.title
       %td= download.release_date
+      %td
+        - if download.download.file?
+          x
       %td= link_to 'Edit', edit_download_path(download)
