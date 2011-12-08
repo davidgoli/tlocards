@@ -1,9 +1,15 @@
+%p
+  = @download.title
+  currently has
+  = @download.download_codes.length
+  codes
+
+%p= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
+
 %form.formtastic{:action => download_codes_path(@download), :method => 'post'}
   %fieldset.inputs
     %ol
       %li.string.input
-        %label.label{:for => 'count'} Number of codes to generate
+        %label.label{:for => 'count'} Increase number of codes to
         %input{:type => 'text', :id => 'count', :name => 'count'}
   %input{:type => 'Submit', :value => 'Generate codes'}
-
-= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
