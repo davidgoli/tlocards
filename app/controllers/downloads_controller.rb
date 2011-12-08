@@ -12,7 +12,20 @@ class DownloadsController < ApplicationController
     if @download.save
       redirect_to(downloads_path, :notice => "Download '#{@download.title}' created")
     else
-      render :action => new
+      render :action => :new
+    end
+  end
+
+  def edit
+    @download = Download.find(params[:id])
+  end
+
+  def update
+    @download = Download.find(params[:id])
+    if @download.update_attributes(params[:download])
+      redirect_to(downloads_path, :notice => "Download '#{@download.title}' saved")
+    else
+      render :action => :edit
     end
   end
 end
