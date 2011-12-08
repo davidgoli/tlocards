@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207234629) do
+ActiveRecord::Schema.define(:version => 20111208000053) do
+
+  create_table "downloads", :force => true do |t|
+    t.string   "title"
+    t.date     "release_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
