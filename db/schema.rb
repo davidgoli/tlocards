@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(:version => 20111208015107) do
     t.integer  "download_id"
     t.string   "code"
     t.string   "email"
+    t.datetime "redeemed_date"
+    t.boolean  "redeemed",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
