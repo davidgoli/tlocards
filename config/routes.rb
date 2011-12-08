@@ -7,6 +7,7 @@ Tlocards::Application.routes.draw do
 
   match 'redeem' => 'codes#redeem', :as => 'redeem_download_code'
   match 'do_redeem' => 'codes#do_redeem', :as => 'do_redeem_download_code'
+  match 'download/:id/attachment' => 'downloads#attachment', :as => 'download_attachment'
 
   root :to => 'welcome#index'
   # The priority is based upon order of creation:

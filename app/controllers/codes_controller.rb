@@ -41,7 +41,7 @@ class CodesController < ApplicationController
     redirect_to redeem_download_code_path, :alert => error and return if error
 
     if code.update_attributes(params[:download_code])
-      redirect_to download_path
+      redirect_to download_path(code.download)
     else
       @code = code
       render redeem
