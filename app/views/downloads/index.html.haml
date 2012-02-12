@@ -13,7 +13,8 @@
       %td Title
       %td Release date
       %td Attachment
-      %td Codes
+      %td Redeemed Codes
+      %td Total Codes
       %td
   %tbody
   - @downloads.each do |download|
@@ -24,5 +25,6 @@
       %td
         - if download.zipfile.file?
           x
+      %td= download.redeemed_codes.length
       %td= link_to download.download_codes.length, new_download_code_path(download)
       %td= link_to 'Edit', edit_download_path(download)
