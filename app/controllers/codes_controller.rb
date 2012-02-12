@@ -54,7 +54,7 @@ class CodesController < ApplicationController
 
     redirect_to redeem_download_code_path, :alert => error and return if error
 
-    if code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
+    if code.redeemed? || code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
       redirect_to download_code_path(code.code)
     else
       @code = code
