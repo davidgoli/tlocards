@@ -1,4 +1,6 @@
 %div.common-header
   %p= link_to 'Home', root_path
-  %p.notice= notice
-  %p.alert= alert
+  - if notice
+    %p.notice= notice
+  - if alert
+    %p.alert= alert
