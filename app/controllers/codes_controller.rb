@@ -18,6 +18,10 @@ class CodesController < ApplicationController
   def index
     @codes = @download.download_codes
     respond_to do |wants|
+      wants.html do
+        render 'index'
+      end
+
       wants.pdf do
         render :pdf => 'index',
             :layout => 'layouts/application.pdf.haml',
