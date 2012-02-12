@@ -1,8 +1,10 @@
 !!!
 %html
   %head
-    %title Tlocards
-    = stylesheet_link_tag :all
+    %title Translinguistic Other
+    = stylesheet_link_tag %w{formtastic.css main.css}
+    /[if lt IE 8]
+      = stylesheet_link_tag 'formtastic_ie7.css'
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
