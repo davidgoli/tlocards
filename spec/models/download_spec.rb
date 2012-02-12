@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Download do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @download = Download.new(:artist => 'My Artist', :title => 's/t')
+  end
+
+  it 'should assign' do
+    @download.title.should == 's/t'
+    @download.artist.should == 'My Artist'
+  end
 end

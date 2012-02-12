@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe DownloadCodeGenerator do
   let(:download) {
-    returning(mock('download')) do |download|
+    mock('download').tap do |download|
       @codes = []
       download.stub_chain(:download_codes, :length){@codes.length}
       download.stub_chain(:download_codes, :build) {|hash|
