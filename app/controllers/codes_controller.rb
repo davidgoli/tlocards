@@ -39,8 +39,8 @@ class CodesController < ApplicationController
   end
 
   def show
-    @code = DownloadCode.first(:conditions => {:code => params[:code] })
-    @download = @code.download
+    code = DownloadCode.first(:conditions => {:code => params[:code] })
+    @download = code.download
   end
 
   def do_redeem
