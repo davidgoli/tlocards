@@ -1,3 +1,5 @@
+- content_for :head do
+  = render 'shared/common_header'
 %p Redeemed codes for
 %h1= "#{@download.artist} - #{@download.title}"
 
@@ -6,8 +8,9 @@
     %td Code
     %td Email
     %td Date Redeemed
+    %td User IP
   %tbody
-    - @codes.each do |code|
+    - redeemed_codes(@codes) do |code|
       %tr
         %td
           = code.code
@@ -15,3 +18,5 @@
           = code.email
         %td
           = code.redeemed_date
+        %td
+          = code.user_ip
