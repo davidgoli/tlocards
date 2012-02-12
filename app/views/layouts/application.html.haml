@@ -6,6 +6,7 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
+    %p= link_to 'Home', root_path
     %p.notice= notice
     %p.alert= alert
     = yield
