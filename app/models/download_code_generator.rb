@@ -4,7 +4,8 @@ class DownloadCodeGenerator
   end
 
   def generate(count)
-    while @download.download_codes.length < count
+    target_count = @download.download_codes.length + count
+    while @download.download_codes.length < target_count
       @download.download_codes.build(:code => random_code)
     end
   end

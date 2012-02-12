@@ -14,12 +14,15 @@ describe DownloadCodeGenerator do
   let(:generator) {DownloadCodeGenerator.new(download)}
 
   describe '#generate' do
-    before do
+    it 'should generate the correct number of codes' do
       generator.generate(5)
+      @codes.length.should == 5
     end
 
-    it 'should generate the correct number of codes' do
-      @codes.length.should == 5
+    it 'should generate cumulatively' do
+      generator.generate(5)
+      generator.generate(5)
+      @codes.length.should == 10
     end
   end
 end
