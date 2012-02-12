@@ -1,5 +1,5 @@
 class CodesController < ApplicationController
-  before_filter :assign_download, :except => [:redeem, :do_redeem, :show]
+  before_filter :assign_download, :except => [:redeem, :do_redeem, :show, :attachment]
   before_filter :authenticate_user!, :only => [:new, :create, :index]
 
   def new
@@ -39,8 +39,8 @@ class CodesController < ApplicationController
   end
 
   def show
-    code = DownloadCode.first(:conditions => {:code => params[:code] })
-    @download = code.download
+    @code = DownloadCode.first(:conditions => {:code => params[:code] })
+    @download = @code.download
   end
 
   def do_redeem
@@ -60,6 +60,12 @@ class CodesController < ApplicationController
       @code = code
       render redeem
     end
+  end
+
+  def attachment
+    code = DownloadCode.first(:conditions => {:code => params[:code] })
+    @download = code.download
+    send_file @download.zipfile.path, :type => 'application/zip'
   end
 
   private

@@ -37,9 +37,4 @@ class DownloadsController < ApplicationController
       render :action => :edit
     end
   end
-
-  def attachment
-    @download = Download.find(params[:id])
-    send_file @download.zipfile.path, :type => 'application/zip'
-  end
 end
