@@ -1,3 +1,5 @@
+- content_for :head do
+  = render 'common_header'
 = semantic_form_for @code, :url => do_redeem_download_code_path do |f|
   = f.inputs do
     = f.input :code, :label => 'Enter code:'

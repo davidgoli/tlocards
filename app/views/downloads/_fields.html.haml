@@ -1,3 +1,5 @@
+- content_for :head do
+  = render 'common_header'
 = semantic_form_for @download, :html => {:multipart => true} do |f|
   = f.inputs :artist, :title, :release_date
   - if @download.zipfile.file?
