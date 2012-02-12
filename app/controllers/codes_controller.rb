@@ -39,37 +39,41 @@ class CodesController < ApplicationController
   end
 
   def show
-    @code = DownloadCode.first(:conditions => {:code => params[:code] })
+    return if reject_code_if_used params[:code]
     @download = @code.download
   end
 
   def do_redeem
-    code = DownloadCode.first(:conditions => {:code => params[:download_code][:code]})
+    return if reject_code_if_used params[:download_code][:code]
 
-    error = if code.nil?
-      "Code '#{params[:download_code][:code]}' not found!"
-    elsif code.expired?
-      "Code '#{code.code}' already used!"
-    end
-
-    redirect_to redeem_download_code_path, :alert => error and return if error
-
-    if code.redeemed? || code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
-      redirect_to download_code_path(code.code)
+    if @code.redeemed? || @code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
+      redirect_to download_code_path(@code.code)
     else
-      @code = code
       render redeem
     end
   end
 
   def attachment
-    code = DownloadCode.first(:conditions => {:code => params[:code] })
-    @download = code.download
+    return if reject_code_if_used params[:code]
+    @download = @code.download
     send_file @download.zipfile.path, :type => 'application/zip'
   end
 
   private
   def assign_download
     @download = Download.find(params[:download_id])
+  end
+
+  def reject_code_if_used code
+    @code = DownloadCode.first(:conditions => {:code => code})
+
+    error = if @code.nil?
+      "Code '#{code}' not found!"
+    elsif @code.expired?
+      "Code '#{code}' already used!"
+    end
+
+    redirect_to redeem_download_code_path, :alert => error and return true if error
+    return false
   end
 end
