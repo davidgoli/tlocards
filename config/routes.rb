@@ -5,6 +5,7 @@ Tlocards::Application.routes.draw do
     resources :codes
   end
 
+  match 'code/:code' => 'codes#show', :as => 'download_code'
   match 'redeem' => 'codes#redeem', :as => 'redeem_download_code'
   match 'do_redeem' => 'codes#do_redeem', :as => 'do_redeem_download_code'
   match 'download/:id/attachment' => 'downloads#attachment', :as => 'download_attachment'

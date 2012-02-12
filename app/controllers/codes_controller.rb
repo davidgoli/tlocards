@@ -1,5 +1,5 @@
 class CodesController < ApplicationController
-  before_filter :assign_download, :except => [:redeem, :do_redeem]
+  before_filter :assign_download, :except => [:redeem, :do_redeem, :show]
   before_filter :authenticate_user!, :only => [:new, :create, :index]
 
   def new
@@ -38,6 +38,11 @@ class CodesController < ApplicationController
     @code = DownloadCode.new
   end
 
+  def show
+    @code = DownloadCode.first(:conditions => {:code => params[:code] })
+    @download = @code.download
+  end
+
   def do_redeem
     code = DownloadCode.first(:conditions => {:code => params[:download_code][:code]})
 
@@ -50,7 +55,7 @@ class CodesController < ApplicationController
     redirect_to redeem_download_code_path, :alert => error and return if error
 
     if code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
-      redirect_to download_path(code.download)
+      redirect_to download_code_path(code.code)
     else
       @code = code
       render redeem
