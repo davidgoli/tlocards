@@ -1,0 +1,17 @@
+%p Redeemed codes for
+%h1= "#{@download.artist} - #{@download.title}"
+
+%table
+  %thead
+    %td Code
+    %td Email
+    %td Date Redeemed
+  %tbody
+    - @codes.each do |code|
+      %tr
+        %td
+          = code.code
+        %td
+          = code.email
+        %td
+          = code.redeemed_date
