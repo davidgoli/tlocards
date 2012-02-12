@@ -43,7 +43,7 @@ class CodesController < ApplicationController
 
     error = if code.nil?
       "Code '#{params[:download_code][:code]}' not found!"
-    elsif code.redeemed?
+    elsif code.expired?
       "Code '#{code.code}' already used!"
     end
 
