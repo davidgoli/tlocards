@@ -38,9 +38,9 @@ class CodesController < ApplicationController
     code = DownloadCode.first(:conditions => {:code => params[:download_code][:code]})
 
     error = if code.nil?
-      'Code not found!'
+      "Code '#{params[:download_code][:code]}' not found!"
     elsif code.redeemed?
-      'Code already used!'
+      "Code '#{code.code}' already used!"
     end
 
     redirect_to redeem_download_code_path, :alert => error and return if error
