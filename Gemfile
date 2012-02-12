@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
+gem 'rails', '3.0.10'
 
 gem 'mongrel', '1.2.0.pre2'
 group :development, :test do
