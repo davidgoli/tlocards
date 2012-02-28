@@ -9,8 +9,7 @@ set :use_sudo, false
 
 role :web, "redeem.translinguisticother.com"                          # Your HTTP server, Apache/etc
 role :app, "redeem.translinguisticother.com"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :db,  "redeem.translinguisticother.com", :primary => true # This is where Rails migrations will run
 
 namespace :deploy do
   task :default do
