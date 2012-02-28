@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.2.1'
 
 gem 'mongrel', '1.2.0.pre2'
 group :development, :test do
@@ -21,11 +21,12 @@ end
 
 gem 'mysql'
 
+gem 'json'
+gem 'jquery-rails'
+
 gem 'haml'
 gem 'haml-rails'
-gem 'json'
 gem 'sass'
-gem 'jquery-rails'
 
 gem 'devise'
 gem 'formtastic'
