@@ -23,4 +23,4 @@ production:
   database: david_tlocards
   username: david_tlocards
   password: 9f56cb2c
-  socket: /tmp/mysql.sock
+  host: 127.0.0.1
