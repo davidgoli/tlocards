@@ -20,7 +20,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: tlocards_production
-  username: root
-  password:
+  database: david_tlocards
+  username: david_tlocards
+  password: 9f56cb2c
   socket: /tmp/mysql.sock
