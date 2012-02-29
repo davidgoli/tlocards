@@ -1,5 +1,7 @@
 %div.common-header
-  %p= link_to 'Home', root_path
+  - if user_signed_in?
+    %p= link_to 'Sign out', destroy_user_session_path, :method => :delete
+  %p= link_to 'Home', admin_path
   - if notice
     %p.notice= notice
   - if alert
