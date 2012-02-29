@@ -32,7 +32,6 @@ module Tlocards
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.6.2.min jquery_ujs application)
     config.generators do |g|
       g.template_engine :haml
       g.test_framework :rspec, :fixture => true, :views => false
