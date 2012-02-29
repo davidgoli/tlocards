@@ -17,6 +17,12 @@
       %td Total Codes
       %td
   %tbody
+  - if @downloads.empty?
+    %tr
+      %td{:colspan => '7'}
+        %em
+          No releases to show, try
+          = link_to 'creating one', new_download_path
   - @downloads.each do |download|
     %tr
       %td= download.artist
