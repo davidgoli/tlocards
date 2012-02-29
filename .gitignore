@@ -5,3 +5,4 @@ tmp/
 public/downloads/
 public/stylesheets/
 .sass-cache
+bin
