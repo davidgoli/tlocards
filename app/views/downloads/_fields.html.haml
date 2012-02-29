@@ -3,9 +3,11 @@
 = semantic_form_for @download, :html => {:multipart => true} do |f|
   = f.inputs :artist, :title, :release_date
   - if @download.zipfile.file?
-    %li
-      Existing file:
-      = @download.zipfile.path
+    %fieldset.inputs
+      %ol
+        %li.string.input
+          %label.label Existing file:
+          =link_to @download.zipfile.original_filename, download_attachment_path(@download.id)
   = f.inputs :zipfile
   = f.actions
   - if @download.persisted?

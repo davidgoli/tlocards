@@ -54,8 +54,13 @@ class CodesController < ApplicationController
   end
 
   def attachment
-    return if reject_code_if_used params[:code]
-    @download = @code.download
+    if user_signed_in?
+      @download = Download.find(params[:code])
+    else
+      return if reject_code_if_used params[:code]
+      @download = @code.download
+    end
+
     send_file @download.zipfile.path, :type => 'application/zip'
   end
 
