@@ -11,6 +11,7 @@
 
 %form.formtastic{:action => download_codes_path(@download), :method => 'post'}
   %fieldset.inputs
+    = csrf_meta_tag
     %ol
       %li.string.input
         %label.label{:for => 'count'} Number to create

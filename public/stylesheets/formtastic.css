@@ -82,12 +82,12 @@ This stylesheet forms part of the Formtastic Rails Plugin
 
 /* BUTTONS
 --------------------------------------------------------------------------------------------------*/
-.formtastic .buttons {
+.formtastic .actions {
   overflow:hidden; /* clear containing floats */
   padding-left:25%;
 }
 
-.formtastic .button {
+.formtastic .action {
   float:left;
   padding-right:0.5em;
 }
