@@ -6,7 +6,8 @@
   = @download.download_codes.length
   codes
 
-%p= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
+- if @download.download_codes.length > 0
+  %p= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
 
 %form.formtastic{:action => download_codes_path(@download), :method => 'post'}
   %fieldset.inputs
