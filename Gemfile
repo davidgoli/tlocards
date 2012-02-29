@@ -19,6 +19,11 @@ group :development, :test do
   gem "guard-livereload", "~> 0.2.0"
 end
 
+group :assets do
+  gem 'sass-rails'
+  gem 'uglifier'
+end
+
 gem 'mysql'
 
 gem 'json'
