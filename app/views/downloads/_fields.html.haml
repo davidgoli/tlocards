@@ -8,3 +8,6 @@
       = @download.zipfile.path
   = f.inputs :zipfile
   = f.buttons
+  - if @download.persisted?
+    %p.link= link_to 'Print or create download codes', new_download_code_path(@download)
+    %p.link= link_to 'View redeemed download codes', download_codes_path(@download)
