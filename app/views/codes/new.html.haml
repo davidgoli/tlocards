@@ -9,14 +9,10 @@
 - if @download.download_codes.length > 0
   %p= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
 
-%form.formtastic{:action => download_codes_path(@download), :method => 'post'}
-  %fieldset.inputs
-    = csrf_meta_tag
-    %ol
-      %li.string.input
-        %label.label{:for => 'count'} Number to create
-        %input{:type => 'text', :id => 'count', :name => 'count'}
-    %ol
-      %li.input
-        %label.label
-        %input{:type => 'Submit', :value => 'Generate codes'}
+= semantic_form_for @download, :html => {:multipart => true}, :url => download_codes_path(@download), :method => 'post' do |f|
+  = f.inputs do
+    %li.string.input
+      %label{:for => 'count'} Number to create
+      %input{:type => 'text', :id => 'count', :name => 'count'}
+  = f.actions do
+    = f.action :submit, :label => 'Generate codes'
