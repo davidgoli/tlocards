@@ -73,7 +73,7 @@ class CodesController < ApplicationController
       "Code '#{code}' already used!"
     end
 
-    redirect_to redeem_download_code_path, :alert => error and return true if error
+    redirect_to root_path, :alert => error and return true if error
     return false
   end
 end
