@@ -7,7 +7,7 @@
       %ol
         %li.string.input
           %label.label Existing file:
-          =link_to @download.zipfile.original_filename, download_attachment_path(@download.id)
+          =link_to @download.zipfile.original_filename, download_direct_attachment_path(@download.id)
   = f.inputs :zipfile
   = f.actions
   - if @download.persisted?

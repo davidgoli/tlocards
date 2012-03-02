@@ -54,8 +54,8 @@ class CodesController < ApplicationController
   end
 
   def attachment
-    if user_signed_in?
-      @download = Download.find(params[:code])
+    if user_signed_in? && params[:download_id]
+      @download = Download.find(params[:download_id])
     else
       return if reject_code_if_used params[:code]
       @download = @code.download
