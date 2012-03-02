@@ -1,7 +1,8 @@
 - content_for :head do
   = render 'shared/common_header'
 %p Redeemed codes for
-%h1= "#{@download.artist} - #{@download.title}"
+%h1
+  =link_to "#{@download.artist} - #{@download.title}", edit_download_path(@download)
 
 %table
   %thead

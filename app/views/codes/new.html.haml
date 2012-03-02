@@ -1,13 +1,13 @@
 - content_for :head do
   = render 'shared/common_header'
 %p
-  = @download.title
+  =link_to @download.title, edit_download_path(@download)
   currently has
   = @download.download_codes.length
   codes
 
 - if @download.download_codes.length > 0
-  %p= link_to 'Download existing codes', download_codes_path(@download, :format => 'pdf')
+  %p= link_to "Download existing #{@download.download_codes.length} codes", download_codes_path(@download, :format => 'pdf')
 
 = semantic_form_for @download, :html => {:multipart => true}, :url => download_codes_path(@download), :method => 'post' do |f|
   = f.inputs do
