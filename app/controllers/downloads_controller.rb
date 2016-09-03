@@ -10,7 +10,7 @@ class DownloadsController < ApplicationController
   end
 
   def create
-    @download = Download.new(params[:download])
+    @download = Download.new(download_params[:download])
     if @download.save
       redirect_to(downloads_path, :notice => "Download '#{@download.title}' created")
     else
@@ -24,8 +24,8 @@ class DownloadsController < ApplicationController
 
   def update
     @download = Download.find(params[:id])
-    if @download.update_attributes(params[:download])
-      @download.zipfile = params[:download][:zipfile]
+    if @download.update_attributes(download_params[:download])
+      @download.zipfile = download_params[:download][:zipfile]
 
       p params[:download][:zipfile]
       if !@download.save
@@ -36,5 +36,11 @@ class DownloadsController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  private
+
+  def download_params
+    params.permit(:download, :artist, :title, :release_date)
   end
 end

@@ -5,8 +5,8 @@ describe Download do
     @download = Download.new(:artist => 'My Artist', :title => 's/t')
   end
 
-  it 'should assign' do
-    @download.title.should == 's/t'
-    @download.artist.should == 'My Artist'
+  it 'assigns' do
+    expect(@download.title).to eq('s/t')
+    expect(@download.artist).to eq('My Artist')
   end
 end
