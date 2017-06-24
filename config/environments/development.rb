@@ -27,6 +27,6 @@ Tlocards::Application.configure do
   config.assets.compress = false
   config.assets.debug = true
 
-  config.active_record.raise_in_transactional_callbacks = truegenerate
+  config.active_record.raise_in_transactional_callbacks = true
 end
 
