@@ -7,7 +7,7 @@ Tlocards::Application.routes.draw do
 
   resources :codes, only: [:get]
 
-  get 'do_redeem' => 'codes#do_redeem', :as => 'do_redeem_download_code'
+  post 'do_redeem' => 'codes#do_redeem', :as => 'do_redeem_download_code'
   get 'code/:code/attachment' => 'codes#attachment', :as => 'download_attachment'
   get 'download/:download_id/attachment' => 'codes#attachment', :as => 'download_direct_attachment'
 

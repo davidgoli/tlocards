@@ -39,15 +39,15 @@ class CodesController < ApplicationController
   end
 
   def show
-    return if reject_code_if_used params[:code]
+    return if reject_code_if_used params[:id]
     @download = @code.download
   end
 
   def do_redeem
     return if reject_code_if_used params[:download_code][:code]
 
-    if @code.redeemed? || @code.update_attributes(params[:download_code].merge(:user_ip => request.remote_ip))
-      redirect_to download_code_path(@code.code)
+    if @code.redeemed? || @code.update_attributes(redemption_attributes)
+      redirect_to download_code_path(@code.download.id, @code.code)
     else
       render redeem
     end
@@ -65,12 +65,17 @@ class CodesController < ApplicationController
   end
 
   private
+  def redemption_attributes
+    params.permit(:download_code).merge(:user_ip => request.remote_ip)
+  end
+
   def assign_download
     @download = Download.find(params[:download_id])
   end
 
   def reject_code_if_used code
-    @code = DownloadCode.first(:conditions => {:code => code})
+    puts 'code', code
+    @code = DownloadCode.where({:code => code}).first
 
     error = if @code.nil?
       "Code '#{code}' not found!"
