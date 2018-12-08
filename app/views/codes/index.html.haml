@@ -11,7 +11,7 @@
     %td Date Redeemed
     %td User IP
   %tbody
-    - redeemed_codes(@codes) do |code|
+    - @codes do |code|
       %tr
         %td
           = code.code

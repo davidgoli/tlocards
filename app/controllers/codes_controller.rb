@@ -17,6 +17,7 @@ class CodesController < ApplicationController
 
   def index
     @codes = @download.download_codes
+    @redeemed_codes = @codes.filter { |c| c.redeemed? }
     respond_to do |wants|
       wants.html do
         render 'index'
