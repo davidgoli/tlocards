@@ -8,6 +8,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda"
   gem "jasmine"
+  gem 'listen'
+  gem 'rails-controller-testing'
 end
 
 group :assets do
@@ -32,3 +34,4 @@ gem 'paperclip'
 gem 'wicked_pdf'
 
 gem 'capistrano'
+gem 'bootsnap'

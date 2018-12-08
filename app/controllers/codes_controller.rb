@@ -1,6 +1,6 @@
 class CodesController < ApplicationController
-  before_filter :assign_download, :except => [:redeem, :do_redeem, :show, :attachment]
-  before_filter :authenticate_user!, :only => [:new, :create, :index]
+  before_action :assign_download, :except => [:redeem, :do_redeem, :show, :attachment]
+  before_action :authenticate_user!, :only => [:new, :create, :index]
 
   def new
   end
