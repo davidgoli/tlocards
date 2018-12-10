@@ -59,3 +59,32 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+lock "~> 3.11.0"
+
+user = 'david'
+domain = 'translinguisticother.com'
+login = "#{user}@#{domain}"
+
+set :stage, 'production'
+set :application, "tlocards"
+set :repo_url, "git@github.com:davidgoli/tlocards.git"
+set :domain, domain
+set :local_user, user
+set :user, user
+ask :password, 'password', echo: false
+
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/home/david/webapps/tlocards/tlocards"
+set :tmp_dir, '/home/david/tmp'
+set :rvm_ruby_version, '2.5.3@tlocards'
+set :linked_files, %w{config/master.key}
+
+role :web, [login]                          # Your HTTP server, Apache/etc
+role :app, [login]                          # This may be the same as your `Web` server
+role :db,  [login], :primary => true # This is where Rails migrations will run
+
+
+#server fetch(:domain), user: fetch(:user), port: 22, password: fetch(:password)

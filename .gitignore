@@ -6,3 +6,6 @@ public/downloads/
 public/stylesheets/
 .sass-cache
 bin
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
