@@ -38,3 +38,5 @@ gem 'paperclip'
 gem 'wicked_pdf'
 
 gem 'bootsnap'
+gem 'therubyracer'
+gem 'execjs'
